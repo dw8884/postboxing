@@ -1,5 +1,9 @@
 <div class="jumbotron center">
 	<h1>Welcome to Postboxing!</h1>
-	<p>Sign up to get your packages delivered to the corner store!<p>
-	<p> <%= link_to "Log In", "#", class: "btn btn-warning btn-lg" %>   <%= link_to "Sign Up", "#", class: "btn btn-default btn-lg" %></p>
+	<% if user_signed_in?%>
+		<p> Thanks for stopping by! We are currently in beta version and getting ready to launch in Brooklyn, NYC very soon! Stay tuned for further updates on our services and expansion to your own city and neighborhood. <p>
+		<p> We're really looking forward to getting you on board so you can start getting your online purchases delivered at a time that is convenient for you! <p>
+	<% else %>
+		<p><%= link_to "Sign Up", new_user_registration_path, class: "btn btn-warning btn-lg" %> to get your packages delivered to the corner store!<p>
+	<% end %>
 <div>
